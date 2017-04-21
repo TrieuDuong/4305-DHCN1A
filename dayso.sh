@@ -14,3 +14,26 @@ read n
 		tong=$(( $tong + ${a[$i]}))
 	done
 	echo "Tong day vua nhap la: $tong"
+# sap xep
+	for (( i = 0; i < $(($n-1)) ; i++ ))
+do
+   for (( j = $i; j < $n; j++ ))
+   do
+
+      if [[ ${a[$i]} -gt ${a[$j]} ]]
+      then
+
+       t=${a[$i]}
+       a[$i]=${a[$j]}
+       a[$j]=$t
+      fi
+   done
+done
+
+echo "Day sap xep tang dan:"
+for (( i = 0; i < $n ; i++ ))
+do
+echo -n "${a[$i]} 	"
+done
+echo
+
